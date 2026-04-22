@@ -64,8 +64,8 @@ export default function Home() {
         <div className="container">
           <h2 className="section-title heading-line is-visible">My Resume</h2>
           <div className="card" style={{ padding: "1rem" }}>
-            <p>resume.pdf</p>
-            <a href="http://localhost:5000/api/download-cv" className="btn btn-primary">
+            <p>Eric_Mokgweetsi_portfolio cv.pdf</p>
+            <a href="/Eric_Mokgweetsi_portfolio%20cv.pdf" className="btn btn-primary" download>
               Download PDF
             </a>
           </div>
