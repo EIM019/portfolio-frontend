@@ -1,41 +1,38 @@
-export const fallbackProjects = [
-  {
-    id: 1,
-    title: "Campus Event Hub",
-    description: "A student event discovery platform with role-based dashboards and analytics.",
-    problem: "Students missed events because updates were fragmented across channels.",
-    solution: "Built a centralized app with searchable events, RSVP tracking, and reminders.",
-    features: ["Role-based auth", "Event analytics", "Reminder notifications"],
-    tech_stack: ["React", "Flask", "SQLite"],
-    image_url: "https://picsum.photos/seed/eventhub/1200/675",
-    live_url: "https://example.com",
-    category: "School Projects",
-    featured: true
-  },
-  {
-    id: 2,
-    title: "Client Invoice Portal",
-    description: "A clean invoicing and payment tracker for freelance clients.",
-    problem: "Manual invoicing caused delays and poor visibility into payment status.",
-    solution: "Created a dashboard for invoice creation, due-date alerts, and PDF export.",
-    features: ["Invoice templates", "Payment status", "PDF exports"],
-    tech_stack: ["React", "Python", "SQLite"],
-    image_url: "https://picsum.photos/seed/invoice/1200/675",
-    live_url: "https://example.com",
-    category: "Client Work",
-    featured: true
-  },
-  {
-    id: 3,
-    title: "TaskFlow Web App",
-    description: "A team task board optimized for speed and keyboard-first interactions.",
-    problem: "Teams needed a lightweight planning app with faster workflows.",
-    solution: "Developed Kanban-style planning with labels, due dates, and search filters.",
-    features: ["Kanban board", "Search and filters", "Keyboard shortcuts"],
-    tech_stack: ["React", "Flask", "Postman"],
-    image_url: "https://picsum.photos/seed/taskflow/1200/675",
-    live_url: "https://example.com",
-    category: "Web Apps",
-    featured: false
+import { useEffect, useState } from "react";
+import { fallbackProjects } from "./fallbackProjects";
+
+export default function Projects() {
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("https://portfolio-backend-72pr.onrender.com/api/projects")
+      .then(res => res.json())
+      .then(data => {
+        setProjects(data.projects);
+        setLoading(false);
+      })
+      .catch(() => {
+        setProjects(fallbackProjects);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) {
+    return <div>Loading projects...</div>;
   }
-];
+
+  return (
+    <div>
+      {projects.map(p => (
+        <div key={p.id}>
+          <img src={p.image_url} alt={p.title} style={{ width: '100%', maxWidth: '300px' }} />
+          <h2>{p.title}</h2>
+          <p>{p.description}</p>
+          <p><strong>Tech Stack:</strong> {p.tech_stack.join(', ')}</p>
+          <a href={p.live_url} target="_blank" rel="noopener noreferrer">View Project</a>
+        </div>
+      ))}
+    </div>
+  );
+}

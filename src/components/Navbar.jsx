@@ -30,7 +30,7 @@ export default function Navbar() {
               {item.label}
             </NavLink>
           ))}
-          <a className="btn btn-ghost" href="http://localhost:5000/api/download-cv">
+          <a className="btn btn-ghost" href="https://portfolio-backend-72pr.onrender.com/api/download-cv">
             Download CV
           </a>
         </nav>
@@ -46,7 +46,7 @@ export default function Navbar() {
             {item.label}
           </NavLink>
         ))}
-        <a className="btn btn-ghost" href="http://localhost:5000/api/download-cv">
+        <a className="btn btn-ghost" href="https://portfolio-backend-72pr.onrender.com/api/download-cv">
           Download CV
         </a>
       </aside>
