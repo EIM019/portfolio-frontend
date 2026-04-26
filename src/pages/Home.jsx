@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Hero from "../components/Hero";
 import ProjectCard from "../components/ProjectCard";
 import SkillBar from "../components/SkillBar";
@@ -6,11 +7,23 @@ import ContactForm from "../components/ContactForm";
 import useIntersectionObserver from "../hooks/useIntersectionObserver";
 import { fallbackProjects } from "../data/projects";
 
+
+const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:5000";
 export default function Home() {
   const [aboutRef, aboutVisible] = useIntersectionObserver();
   const [skillsRef, skillsVisible] = useIntersectionObserver();
+  const [featured, setFeatured] = useState([]);
 
-  const featured = fallbackProjects.filter((project) => project.featured);
+  useEffect(() => {
+    fetch(`${API_BASE}/api/projects`)
+      .then((r) => r.json())
+      .then((data) => {
+        const all = data.projects || fallbackProjects;
+        setFeatured(all.filter((p) => p.featured));
+      })
+      .catch(() => setFeatured(fallbackProjects.filter((p) => p.featured)));
+  }, []);
+
 
   return (
     <main>
