@@ -63,10 +63,10 @@ export default function ProjectDetail() {
           <h3>Screenshots</h3>
           <div className="project-grid" style={{ gridTemplateColumns: "repeat(2, minmax(0, 1fr))" }}>
             <div className="project-image-wrap card">
-              <img src={`https://picsum.photos/seed/${project.id}a/1200/675`} alt="Screenshot one" />
+              <img src={`https://i.imgur.com/BAyoiUj.jpg`} alt="Screenshot one" />
             </div>
             <div className="project-image-wrap card">
-              <img src={`https://picsum.photos/seed/${project.id}b/1200/675`} alt="Screenshot two" />
+              <img src={`https://i.imgur.com/1vBtW99.jpg`} alt="Screenshot two" />
             </div>
           </div>
         </section>
