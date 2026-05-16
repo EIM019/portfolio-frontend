@@ -24,7 +24,7 @@ export default function Navbar() {
     <header className={`navbar ${scrolled ? "is-scrolled" : ""}`}>
       <div className="container navbar-inner">
         <Link className="logo" to="/">
-          Itumeleng Eric
+          {"<developer/>"}
         </Link>
         <nav className="desktop-nav">
           {navItems.map((item) => (
