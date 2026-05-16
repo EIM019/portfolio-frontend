@@ -8,9 +8,9 @@ import ProjectDetail from "./pages/ProjectDetail";
 import About from "./pages/About";
 
 const titleMap = {
-  "/": "Home | Developer Portfolio",
-  "/projects": "Projects | Developer Portfolio",
-  "/about": "About | Developer Portfolio"
+  "/": "Itumeleng Eric Mokgweetsi | Software & Data Engineer",
+  "/projects": "Projects | Itumeleng Eric Mokgweetsi",
+  "/about": "About | Itumeleng Eric Mokgweetsi"
 };
 
 function ScrollToTopButton() {
@@ -70,8 +70,8 @@ export default function App() {
   useEffect(() => {
     const isProjectDetail = location.pathname.startsWith("/projects/");
     document.title = isProjectDetail
-      ? "Project Details | Developer Portfolio"
-      : titleMap[location.pathname] || "404 | Developer Portfolio";
+      ? "Project Details | Itumeleng Eric Mokgweetsi"
+      : titleMap[location.pathname] || "404 | Itumeleng Eric Mokgweetsi";
   }, [location.pathname]);
 
   return (

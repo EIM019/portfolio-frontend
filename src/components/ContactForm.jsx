@@ -1,6 +1,9 @@
 import { useState } from "react";
 
 const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:5000";
+const linkedInUrl = "https://www.linkedin.com/in/itumeleng-eric-mokgweetsi-980163299/";
+const whatsAppUrl = "https://wa.me/26774408234";
+const emailUrl = "mailto:mokgweetsiit@gmail.com";
 
 export default function ContactForm() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -83,13 +86,13 @@ export default function ContactForm() {
         </form>
       )}
       <div className="social-row">
-        <a href="https://linkedin.com" target="_blank" rel="noreferrer">
+        <a href={linkedInUrl} target="_blank" rel="noreferrer">
           LinkedIn
         </a>
-        <a href="https://wa.me/1234567890" target="_blank" rel="noreferrer">
+        <a href={whatsAppUrl} target="_blank" rel="noreferrer">
           WhatsApp
         </a>
-        <a href="mailto:you@example.com">Email</a>
+        <a href={emailUrl}>Email</a>
       </div>
     </div>
   );

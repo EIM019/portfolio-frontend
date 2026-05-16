@@ -9,6 +9,8 @@ import { fallbackProjects } from "../data/projects";
 
 
 const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:5000";
+const cvPath = "/Eric_Mokgweetsi_portfolio%20cv.pdf";
+
 export default function Home() {
   const [aboutRef, aboutVisible] = useIntersectionObserver();
   const [skillsRef, skillsVisible] = useIntersectionObserver();
@@ -52,8 +54,8 @@ export default function Home() {
         <div className={`container reveal ${aboutVisible ? "is-visible" : ""}`}>
           <h2 className={`section-title heading-line ${aboutVisible ? "is-visible" : ""}`}>About</h2>
           <p className="muted">
-            I am a final-year Computer Science student who enjoys turning messy requirements into clear,
-            scalable products with thoughtful UI and robust backend APIs.
+            I am a final-year Computer Science student and Software & Data Engineer who turns
+            messy requirements into clear products, robust APIs, and useful data workflows.
           </p>
           <Link className="btn btn-ghost" to="/about" style={{ marginTop: "1rem" }}>
             Read More
@@ -78,7 +80,7 @@ export default function Home() {
           <h2 className="section-title heading-line is-visible">My Resume</h2>
           <div className="card" style={{ padding: "1rem" }}>
             <p>Eric_Mokgweetsi_portfolio cv.pdf</p>
-            <a href="/Eric_Mokgweetsi_portfolio%20cv.pdf" className="btn btn-primary" download>
+            <a href={cvPath} className="btn btn-primary" download>
               Download PDF
             </a>
           </div>
