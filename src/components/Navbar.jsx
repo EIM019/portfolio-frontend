@@ -7,6 +7,8 @@ const navItems = [
   { to: "/about", label: "About" }
 ];
 
+const cvPath = "/Eric_Mokgweetsi_portfolio%20cv.pdf";
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -22,7 +24,7 @@ export default function Navbar() {
     <header className={`navbar ${scrolled ? "is-scrolled" : ""}`}>
       <div className="container navbar-inner">
         <Link className="logo" to="/">
-          {"<studentdev />"}
+          Itumeleng Eric
         </Link>
         <nav className="desktop-nav">
           {navItems.map((item) => (
@@ -30,7 +32,7 @@ export default function Navbar() {
               {item.label}
             </NavLink>
           ))}
-          <a className="btn btn-ghost" href="https://portfolio-backend-72pr.onrender.com/api/download-cv">
+          <a className="btn btn-ghost" href={cvPath} download>
             Download CV
           </a>
         </nav>
@@ -46,7 +48,7 @@ export default function Navbar() {
             {item.label}
           </NavLink>
         ))}
-        <a className="btn btn-ghost" href="https://portfolio-backend-72pr.onrender.com/api/download-cv">
+        <a className="btn btn-ghost" href={cvPath} download>
           Download CV
         </a>
       </aside>

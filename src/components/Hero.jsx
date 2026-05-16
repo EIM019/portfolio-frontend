@@ -12,19 +12,15 @@ export default function Hero() {
             <span className="status-dot" />
             Available for opportunities
           </div>
-          <h1 className="hero-title">Hi, Welcome to My Portfolio</h1>
+          <h1 className="hero-title">Mr. Itumeleng Eric Mokgweetsi</h1>
           <h2 className="hero-subtitle">
-            As Sofware Engineer, I build scalable web applications.
-
-            As a Data Engineer, I specialize in designing and optimizing data pipelines 
-            that transform raw data into actionable insights. With a strong foundation in Python 
-            and SQL, I create efficient ETL processes and maintain robust data infrastructure to support analytics 
-            and machine learning initiatives.
+            Software & Data Engineer building scalable web applications, clean backend APIs,
+            and data pipelines that turn raw information into useful insight.
             <span className="typing-cursor">|</span>
           </h2>
           <p className="muted">
-            Final-year Computer Science student focused on creating performant products that are clean,
-            fast, and reliable for real users.
+            Final-year Computer Science student focused on practical products that are reliable,
+            maintainable, and built around real user needs.
           </p>
           <div className="hero-actions">
             <Link to="/projects" className="btn btn-primary">
@@ -35,7 +31,7 @@ export default function Hero() {
             </a>
           </div>
           <div className="hero-chips">
-            {["React", "Flask", "Python", "SQLite", "PostgreSQL","SQL Server", "Azure", "ETL Pipeline"].map((tech) => (
+            {["React", "Flask", "Python", "SQL", "PostgreSQL", "SQL Server", "Azure", "ETL Pipelines"].map((tech) => (
               <span className="chip" key={tech}>
                 {tech}
               </span>

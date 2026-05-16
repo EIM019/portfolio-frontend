@@ -12,17 +12,17 @@ export default function About() {
           <div className="card" style={{ padding: "1rem" }}>
             <h2>My Story</h2>
             <p className="muted">
-              I started out building simple scripts, mostly experimenting and trying to understand how things work behind the scenes. What began as curiosity quickly turned into something more practical when I started solving real problems for classmates, automating tasks, organizing data, and building small systems that actually made life easier.
+              I started out building simple scripts, experimenting and learning how things work behind the scenes. That curiosity became practical when I began solving real problems for classmates, automating tasks, organizing data, and building small systems that made work easier.
 
-              That’s when I moved into full-stack development. Instead of just writing code, I focused on building complete solutions from the interface users interact with, down to the logic and data handling behind it. Most of my projects are driven by real-world needs, like managing workflows, tracking performance, or simplifying everyday processes.
+              That is what moved me into full-stack development. Instead of only writing isolated code, I focus on complete solutions: the interface people use, the backend logic that supports it, and the data layer that keeps everything reliable. Most of my projects are driven by real needs, like managing workflows, tracking performance, or simplifying everyday processes.
 
-              Along the way, I’ve also developed a strong interest in data engineering. Working with systems that handle tasks and records naturally pushed me toward thinking about how data is structured, processed, and scaled. I’ve started exploring how to design data pipelines, optimize storage, and make data more useful for decision-making not just for display.
+              Along the way, I developed a strong interest in data engineering. Working with systems that handle tasks and records pushed me to think about how data is structured, processed, and scaled. I enjoy designing pipelines, improving storage, and making data useful for decisions rather than leaving it buried in a database.
 
-              This portfolio is a reflection of that journey. It’s not just a collection of projects, but a progression—from simple ideas to more structured, scalable systems. Each project represents a problem solved, a skill improved, and a step closer to building efficient, data-driven applications.
+              This portfolio reflects that journey. It is a progression from simple ideas to more structured, scalable systems. Each project represents a problem solved, a skill improved, and a step toward building efficient, data-driven applications.
             </p>
             <h3>Skills</h3>
             <div className="badge-row">
-              {["React", "Flask", "Python", "SQLite", "PostgreSQL","SQL Server", "Azure", "ETL Pipeline", "Airflow DAG", "Data Warehousing", "PHP", "C#, ASP.NET Razor"].map((skill) => (
+              {["React", "Flask", "Python", "SQLite", "PostgreSQL", "SQL Server", "Azure", "ETL Pipelines", "Airflow DAG", "Data Warehousing", "PHP", "C#", "ASP.NET Razor"].map((skill) => (
                 <span className="chip" key={skill}>
                   {skill}
                 </span>
@@ -36,9 +36,7 @@ export default function About() {
               </div>
               <div className="timeline-item">
                 <h4>Freelance Web Developer</h4>
-                <p className="muted">•	Built dashboards and web-based systems for small clients
-                                      •	Translated client requirements into functional applications
-                                      •	Delivered solutions focused on usability and efficiency
+                <p className="muted">Built dashboards and web-based systems for small clients. Translated client requirements into functional applications and delivered solutions focused on usability and efficiency.
                 </p>
               </div>
             </div>
