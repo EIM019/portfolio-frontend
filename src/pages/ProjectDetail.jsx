@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import SmartImage from "../components/SmartImage";
 import { fallbackProjects } from "../data/projects";
 
 const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:5000";
@@ -37,7 +38,13 @@ export default function ProjectDetail() {
     <main className="section">
       <div className="container">
         <div className="project-image-wrap card">
-          <img src={project.image_url} alt={project.title} className="project-image" />
+          <SmartImage
+            src={project.image_url}
+            alt={project.title}
+            className="project-image"
+            fallbackTitle={project.title}
+            fallbackText={(project.tech_stack || []).slice(0, 3).join(" / ")}
+          />
         </div>
         <h1 className="section-title heading-line is-visible" style={{ marginTop: "1rem" }}>
           {project.title}
@@ -63,10 +70,22 @@ export default function ProjectDetail() {
           <h3>Screenshots</h3>
           <div className="project-grid" style={{ gridTemplateColumns: "repeat(2, minmax(0, 1fr))" }}>
             <div className="project-image-wrap card">
-              <img src={`https://i.imgur.com/BAyoiUj.jpg`} alt="Screenshot one" />
+              <SmartImage
+                src="https://i.imgur.com/BAyoiUj.jpg"
+                alt="Screenshot one"
+                className="project-image"
+                fallbackTitle="Screenshot"
+                fallbackText="App preview unavailable"
+              />
             </div>
             <div className="project-image-wrap card">
-              <img src={`https://i.imgur.com/1vBtW99.jpg`} alt="Screenshot two" />
+              <SmartImage
+                src="https://i.imgur.com/1vBtW99.jpg"
+                alt="Screenshot two"
+                className="project-image"
+                fallbackTitle="Screenshot"
+                fallbackText="App preview unavailable"
+              />
             </div>
           </div>
         </section>

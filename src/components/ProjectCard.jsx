@@ -1,10 +1,17 @@
 import { Link } from "react-router-dom";
+import SmartImage from "./SmartImage";
 
 export default function ProjectCard({ title, description, techStack, imageUrl, liveUrl, detailUrl }) {
   return (
     <article className="project-card card">
       <div className="project-image-wrap">
-        <img src={imageUrl} alt={title} className="project-image" />
+        <SmartImage
+          src={imageUrl}
+          alt={title}
+          className="project-image"
+          fallbackTitle={title}
+          fallbackText={(techStack || []).slice(0, 3).join(" / ")}
+        />
       </div>
       <div className="project-content">
         <h3>{title}</h3>
