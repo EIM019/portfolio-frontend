@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import ProjectCard from "../components/ProjectCard";
-import { fallbackProjects } from "../data/projects";
+import { fallbackProjects, mergeProjects } from "../data/projects";
 
 const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:5000";
 const tabs = ["All", "Web Apps", "School Projects", "Client Work"];
@@ -12,7 +12,7 @@ export default function Projects() {
   useEffect(() => {
     fetch(`${API_BASE}/api/projects`)
       .then((response) => response.json())
-      .then((data) => setProjects(data.projects || fallbackProjects))
+      .then((data) => setProjects(mergeProjects(data.projects || [])))
       .catch(() => setProjects(fallbackProjects));
   }, []);
 

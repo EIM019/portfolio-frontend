@@ -13,7 +13,9 @@ export default function ProjectDetail() {
   useEffect(() => {
     fetch(`${API_BASE}/api/projects/${id}`)
       .then((response) => response.json())
-      .then((data) => setProject(data.project))
+      .then((data) => {
+        setProject(data.project || fallbackProjects.find((item) => String(item.id) === String(id)));
+      })
       .catch(() => setProject(fallbackProjects.find((item) => String(item.id) === String(id))))
       .finally(() => setLoading(false));
   }, [id]);

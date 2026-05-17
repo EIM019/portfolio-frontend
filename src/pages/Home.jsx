@@ -3,7 +3,7 @@ import Hero from "../components/Hero";
 import ProjectCard from "../components/ProjectCard";
 import AppRequirementsChat from "../components/AppRequirementsChat";
 import ContactForm from "../components/ContactForm";
-import { fallbackProjects } from "../data/projects";
+import { fallbackProjects, mergeProjects } from "../data/projects";
 
 
 const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:5000";
@@ -15,8 +15,7 @@ export default function Home() {
     fetch(`${API_BASE}/api/projects`)
       .then((r) => r.json())
       .then((data) => {
-        const all = data.projects || fallbackProjects;
-        setProjects(all);
+        setProjects(mergeProjects(data.projects || []));
       })
       .catch(() => setProjects(fallbackProjects));
   }, []);
