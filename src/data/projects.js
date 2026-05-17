@@ -14,7 +14,7 @@ export const fallbackProjects = [
   },
   {
     id: 2,
-    title: "BotswanaPost Task Manager",
+    title: "Task Manager App",
     description: "A Flask task and performance management system for tracking appraisals, tasks, notifications, and team productivity.",
     problem: "Teams needed a clearer way to assign tasks, monitor completion, capture appraisal records, and review performance without relying on scattered manual tracking.",
     solution: "Built a Python Flask application with role-based dashboards, task assignment flows, employee appraisal views, notification handling, and reporting/export tools.",
