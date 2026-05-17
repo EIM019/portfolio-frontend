@@ -43,6 +43,7 @@ export default function Projects() {
               techStack={project.tech_stack}
               imageUrl={project.image_url}
               liveUrl={project.live_url}
+              githubUrl={project.github_url}
               detailUrl={`/projects/${project.id}`}
             />
           ))}

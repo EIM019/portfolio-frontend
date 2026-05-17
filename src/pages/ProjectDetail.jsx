@@ -36,6 +36,8 @@ export default function ProjectDetail() {
     );
   }
 
+  const screenshots = project.screenshots?.length ? project.screenshots : [];
+
   return (
     <main className="section">
       <div className="container">
@@ -71,30 +73,47 @@ export default function ProjectDetail() {
           </ul>
           <h3>Screenshots</h3>
           <div className="project-grid" style={{ gridTemplateColumns: "repeat(2, minmax(0, 1fr))" }}>
-            <div className="project-image-wrap card">
-              <SmartImage
-                src="/images/xbankz-shot-1.png"
-                alt="Screenshot one"
-                className="project-image"
-                fallbackTitle="Screenshot"
-                fallbackText="App preview unavailable"
-              />
-            </div>
-            <div className="project-image-wrap card">
-              <SmartImage
-                src="/images/xbankz-shot-2.png"
-                alt="Screenshot two"
-                className="project-image"
-                fallbackTitle="Screenshot"
-                fallbackText="App preview unavailable"
-              />
-            </div>
+            {screenshots.length ? (
+              screenshots.map((screenshot, index) => (
+                <div className="project-image-wrap card" key={screenshot}>
+                  <SmartImage
+                    src={screenshot}
+                    alt={`${project.title} screenshot ${index + 1}`}
+                    className="project-image"
+                    fallbackTitle="Screenshot"
+                    fallbackText="App preview unavailable"
+                  />
+                </div>
+              ))
+            ) : (
+              <div className="project-image-wrap card">
+                <SmartImage
+                  src={project.image_url}
+                  alt={`${project.title} preview`}
+                  className="project-image"
+                  fallbackTitle={project.title}
+                  fallbackText={(project.tech_stack || []).slice(0, 3).join(" / ")}
+                />
+              </div>
+            )}
           </div>
         </section>
         <div className="project-actions">
-          <a href={project.live_url} className="btn btn-primary" target="_blank" rel="noreferrer">
-            View Live
-          </a>
+          {project.live_url && (
+            <a href={project.live_url} className="btn btn-primary" target="_blank" rel="noreferrer">
+              View Live
+            </a>
+          )}
+          {!project.live_url && project.github_url && (
+            <a href={project.github_url} className="btn btn-primary" target="_blank" rel="noreferrer">
+              View Source
+            </a>
+          )}
+          {project.live_url && project.github_url && (
+            <a href={project.github_url} className="btn btn-ghost" target="_blank" rel="noreferrer">
+              Source Code
+            </a>
+          )}
           <Link to="/projects" className="btn btn-ghost">
             Back to Projects
           </Link>

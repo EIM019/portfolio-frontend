@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Urban Park project preview</title>
+  <desc id="desc">A stylized parking management dashboard preview with site metrics and parking bay tiles.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f7fbfa"/>
+      <stop offset="55%" stop-color="#dfeceb"/>
+      <stop offset="100%" stop-color="#f3eadc"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#163247"/>
+      <stop offset="100%" stop-color="#244d64"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <rect x="88" y="76" width="1024" height="568" rx="34" fill="#ffffff" opacity="0.95"/>
+  <rect x="88" y="76" width="1024" height="116" rx="34" fill="url(#panel)"/>
+  <text x="140" y="132" fill="#ffffff" font-family="Georgia, serif" font-size="38" font-weight="700">Urban-Park Solutions</text>
+  <text x="140" y="166" fill="#d8edf0" font-family="Arial, sans-serif" font-size="20">Carpark management dashboard</text>
+  <rect x="866" y="112" width="176" height="42" rx="10" fill="#2f6f88"/>
+  <text x="904" y="140" fill="#ffffff" font-family="Arial, sans-serif" font-size="17" font-weight="700">Site B Layout</text>
+  <text x="140" y="246" fill="#173247" font-family="Arial, sans-serif" font-size="19" font-weight="700" letter-spacing="3">LIVE OPERATIONS</text>
+  <text x="140" y="292" fill="#162c3d" font-family="Georgia, serif" font-size="42" font-weight="700">Parking availability, bookings, and layouts</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="140" y="330" width="178" height="102" rx="18" fill="#ecf7f4"/>
+    <text x="164" y="366" fill="#5f7880" font-size="17">Available</text>
+    <text x="164" y="410" fill="#0f3f45" font-size="42" font-weight="700">71</text>
+    <rect x="344" y="330" width="178" height="102" rx="18" fill="#fff4df"/>
+    <text x="368" y="366" fill="#806b40" font-size="17">Booked</text>
+    <text x="368" y="410" fill="#715014" font-size="42" font-weight="700">18</text>
+    <rect x="548" y="330" width="178" height="102" rx="18" fill="#edf1ff"/>
+    <text x="572" y="366" fill="#5f6688" font-size="17">Priority</text>
+    <text x="572" y="410" fill="#344a9b" font-size="42" font-weight="700">6</text>
+  </g>
+  <rect x="760" y="244" width="282" height="274" rx="24" fill="#f6f8f8" stroke="#d9e4e2"/>
+  <g transform="translate(794 282)">
+    <rect width="214" height="196" rx="16" fill="#ffffff"/>
+    <g stroke="#ffffff" stroke-width="4">
+      <rect x="18" y="18" width="38" height="30" rx="7" fill="#47a67a"/>
+      <rect x="64" y="18" width="38" height="30" rx="7" fill="#47a67a"/>
+      <rect x="110" y="18" width="38" height="30" rx="7" fill="#d59e39"/>
+      <rect x="156" y="18" width="38" height="30" rx="7" fill="#47a67a"/>
+      <rect x="18" y="60" width="38" height="30" rx="7" fill="#4c8ec2"/>
+      <rect x="64" y="60" width="38" height="30" rx="7" fill="#47a67a"/>
+      <rect x="110" y="60" width="38" height="30" rx="7" fill="#6e72c9"/>
+      <rect x="156" y="60" width="38" height="30" rx="7" fill="#47a67a"/>
+      <rect x="18" y="102" width="38" height="30" rx="7" fill="#d87272"/>
+      <rect x="64" y="102" width="38" height="30" rx="7" fill="#47a67a"/>
+      <rect x="110" y="102" width="38" height="30" rx="7" fill="#47a67a"/>
+      <rect x="156" y="102" width="38" height="30" rx="7" fill="#4c8ec2"/>
+      <rect x="18" y="144" width="38" height="30" rx="7" fill="#47a67a"/>
+      <rect x="64" y="144" width="38" height="30" rx="7" fill="#d59e39"/>
+      <rect x="110" y="144" width="38" height="30" rx="7" fill="#47a67a"/>
+      <rect x="156" y="144" width="38" height="30" rx="7" fill="#47a67a"/>
+    </g>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="18" fill="#385363">
+    <circle cx="154" cy="512" r="10" fill="#47a67a"/>
+    <text x="176" y="518">Available</text>
+    <circle cx="294" cy="512" r="10" fill="#d59e39"/>
+    <text x="316" y="518">Booked</text>
+    <circle cx="422" cy="512" r="10" fill="#4c8ec2"/>
+    <text x="444" y="518">EV / visitor</text>
+    <circle cx="586" cy="512" r="10" fill="#d87272"/>
+    <text x="608" y="518">Inactive</text>
+  </g>
+</svg>

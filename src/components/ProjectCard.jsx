@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import SmartImage from "./SmartImage";
 
-export default function ProjectCard({ title, description, techStack, imageUrl, liveUrl, detailUrl }) {
+export default function ProjectCard({ title, description, techStack, imageUrl, liveUrl, githubUrl, detailUrl }) {
   return (
     <article className="project-card card">
       <div className="project-image-wrap">
@@ -24,9 +24,16 @@ export default function ProjectCard({ title, description, techStack, imageUrl, l
           ))}
         </div>
         <div className="project-actions">
-          <a className="btn btn-primary live-btn" href={liveUrl} target="_blank" rel="noreferrer">
-            <span className="arrow">→</span> Live Demo
-          </a>
+          {liveUrl && (
+            <a className="btn btn-primary live-btn" href={liveUrl} target="_blank" rel="noreferrer">
+              <span className="arrow">-&gt;</span> Live Demo
+            </a>
+          )}
+          {!liveUrl && githubUrl && (
+            <a className="btn btn-primary live-btn" href={githubUrl} target="_blank" rel="noreferrer">
+              <span className="arrow">-&gt;</span> Source Code
+            </a>
+          )}
           <Link className="btn btn-ghost" to={detailUrl}>
             Details
           </Link>

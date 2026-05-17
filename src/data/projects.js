@@ -8,6 +8,7 @@ export const fallbackProjects = [
     features: ["OTP login with account lockout", "Internal and interbank transfers with admin approval", "Fraud detection and audit trail logging"],
     tech_stack: ["React", "Flask", "PostgreSQL"],
     image_url: "/images/xbankz.png",
+    screenshots: ["/images/xbankz-shot-1.png", "/images/xbankz-shot-2.png"],
     live_url: "https://project-xbanz-frontend.vercel.app",
     category: "Web Apps",
     featured: true
@@ -28,6 +29,25 @@ export const fallbackProjects = [
     image_url: "",
     live_url: "https://botswanapost-task-manager.onrender.com",
     category: "Web Apps",
+    featured: true
+  },
+  {
+    id: 3,
+    title: "Urban Park",
+    description: "An ASP.NET Core MVC parking management system for searching bays, booking spaces, and managing site layouts.",
+    problem: "Operations teams needed a structured way to control parking availability across multiple sites, handle staff and visitor bookings, and keep layout status visible.",
+    solution: "Built a role-based car park management dashboard with seeded demo data, booking workflows, availability search, notifications, and visual layout controls.",
+    features: [
+      "Role-based dashboards for facilities managers, reception/admin users, IT technicians, and standard users",
+      "Availability search by site, date/time, and parking bay type",
+      "Booking create, edit, cancel, priority override, and notification workflows",
+      "Visual site layouts with active, booked, disabled, EV, visitor, and lent-space states"
+    ],
+    tech_stack: ["ASP.NET Core MVC", "C#", "SQLite", "Entity Framework", "Identity"],
+    image_url: "/images/urban-park.svg",
+    live_url: "",
+    github_url: "https://github.com/EIM019/Urban-Park",
+    category: "School Projects",
     featured: true
   }
 ];

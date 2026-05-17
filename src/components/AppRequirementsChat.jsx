@@ -80,7 +80,7 @@ function answerForProject(project, question) {
   }
 
   if (q.includes("feature") || q.includes("test") || q.includes("demo")) {
-    return `Features to review in ${name}: ${formatList(project.features)}. ${project.live_url ? `Live demo: ${project.live_url}` : "A live demo link will be added when available."}`;
+    return `Features to review in ${name}: ${formatList(project.features)}. ${project.live_url ? `Live demo: ${project.live_url}` : project.github_url ? `Source code: ${project.github_url}` : "A live demo link will be added when available."}`;
   }
 
   if (q.includes("stack") || q.includes("tech") || q.includes("language") || q.includes("database")) {
@@ -88,7 +88,9 @@ function answerForProject(project, question) {
   }
 
   if (q.includes("link") || q.includes("live") || q.includes("url")) {
-    return project.live_url ? `You can open ${name} here: ${project.live_url}` : `A live link for ${name} has not been added yet.`;
+    if (project.live_url) return `You can open ${name} here: ${project.live_url}`;
+    if (project.github_url) return `${name} is available as source code here: ${project.github_url}`;
+    return `A live link for ${name} has not been added yet.`;
   }
 
   if (q.includes("role") || q.includes("contribution") || q.includes("did you")) {
