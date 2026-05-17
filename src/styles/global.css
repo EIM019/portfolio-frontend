@@ -407,6 +407,10 @@ pre {
   gap: 1rem;
 }
 
+.about-skills {
+  margin: 0.75rem 0 1rem;
+}
+
 .skill-row {
   background: var(--bg-secondary);
   border: 1px solid var(--border);
@@ -432,6 +436,95 @@ pre {
   border-radius: inherit;
   background: linear-gradient(90deg, var(--accent), #60a5fa);
   transition: width 800ms ease-out;
+}
+
+.app-chat {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.app-chat-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(180px, 260px);
+  gap: 1rem;
+  align-items: start;
+}
+
+.app-chat-header h2 {
+  margin: 0;
+  font-size: clamp(1.3rem, 2vw, 1.9rem);
+}
+
+.eyebrow {
+  margin: 0 0 0.25rem;
+  color: var(--accent);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+}
+
+.app-chat select,
+.chat-input-row input {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  padding: 0.75rem;
+  font: inherit;
+}
+
+.app-chat-body {
+  min-height: 220px;
+  max-height: 320px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(8, 12, 20, 0.55);
+}
+
+.chat-bubble {
+  max-width: min(720px, 92%);
+  padding: 0.75rem 0.85rem;
+  border-radius: 12px;
+  color: var(--text-primary);
+}
+
+.chat-bubble.assistant {
+  align-self: flex-start;
+  border: 1px solid var(--border);
+  background: var(--bg-tertiary);
+}
+
+.chat-bubble.user {
+  align-self: flex-end;
+  background: var(--accent);
+}
+
+.prompt-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.prompt-row button {
+  border: 1px solid var(--border-accent);
+  border-radius: 999px;
+  background: rgba(59, 130, 246, 0.08);
+  color: var(--text-primary);
+  padding: 0.45rem 0.75rem;
+  cursor: pointer;
+}
+
+.chat-input-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.6rem;
 }
 
 .contact-card {
@@ -565,6 +658,15 @@ pre {
 
   .about-grid {
     grid-template-columns: 1fr;
+  }
+
+  .app-chat-header,
+  .chat-input-row {
+    grid-template-columns: 1fr;
+  }
+
+  .app-chat-body {
+    max-height: 420px;
   }
 
   .footer-grid,

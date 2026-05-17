@@ -1,3 +1,5 @@
+import SkillBar from "../components/SkillBar";
+
 export default function About() {
   return (
     <main className="section">
@@ -21,6 +23,12 @@ export default function About() {
               This portfolio reflects that journey. It is a progression from simple ideas to more structured, scalable systems. Each project represents a problem solved, a skill improved, and a step toward building efficient, data-driven applications.
             </p>
             <h3>Skills</h3>
+            <div className="skills-grid about-skills">
+              <SkillBar label="Frontend (React)" value={92} />
+              <SkillBar label="Backend (Flask/Python)" value={88} delay={120} />
+              <SkillBar label="Database (SQLite/SQL)" value={84} delay={240} />
+              <SkillBar label="Tools (Git/Postman)" value={86} delay={360} />
+            </div>
             <div className="badge-row">
               {["React", "Flask", "Python", "SQLite", "PostgreSQL", "SQL Server", "Azure", "ETL Pipelines", "Airflow DAG", "Data Warehousing", "PHP", "C#", "ASP.NET Razor"].map((skill) => (
                 <span className="chip" key={skill}>
