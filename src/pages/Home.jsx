@@ -1,18 +1,14 @@
-import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Hero from "../components/Hero";
 import ProjectCard from "../components/ProjectCard";
 import AppRequirementsChat from "../components/AppRequirementsChat";
 import ContactForm from "../components/ContactForm";
-import useIntersectionObserver from "../hooks/useIntersectionObserver";
 import { fallbackProjects } from "../data/projects";
 
 
 const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:5000";
-const cvPath = "/Eric_Mokgweetsi_portfolio%20cv.pdf";
 
 export default function Home() {
-  const [aboutRef, aboutVisible] = useIntersectionObserver();
   const [projects, setProjects] = useState(fallbackProjects);
 
   useEffect(() => {
@@ -53,31 +49,6 @@ export default function Home() {
       <section className="section">
         <div className="container">
           <AppRequirementsChat projects={projects} />
-        </div>
-      </section>
-
-      <section className="section" ref={aboutRef}>
-        <div className={`container reveal ${aboutVisible ? "is-visible" : ""}`}>
-          <h2 className={`section-title heading-line ${aboutVisible ? "is-visible" : ""}`}>About</h2>
-          <p className="muted">
-            I am a final-year Computer Science student and Software & Data Engineer who turns
-            messy requirements into clear products, robust APIs, and useful data workflows.
-          </p>
-          <Link className="btn btn-ghost" to="/about" style={{ marginTop: "1rem" }}>
-            Read More
-          </Link>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="container">
-          <h2 className="section-title heading-line is-visible">My Resume</h2>
-          <div className="card" style={{ padding: "1rem" }}>
-            <p>Eric_Mokgweetsi_portfolio cv.pdf</p>
-            <a href={cvPath} className="btn btn-primary" download>
-              Download PDF
-            </a>
-          </div>
         </div>
       </section>
 
