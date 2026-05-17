@@ -10,7 +10,7 @@ export default function About() {
           <div className="card" style={{ padding: "1rem" }}>
             <div className="project-image-wrap card">
               <SmartImage
-                src="https://i.imgur.com/4p6PtyQ.jpg"
+                src="/images/profile.jpg"
                 alt="Mr. Itumeleng Eric Mokgweetsi"
                 className="project-image"
                 fallbackTitle="IM"

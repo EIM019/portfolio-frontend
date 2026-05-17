@@ -71,7 +71,7 @@ export default function ProjectDetail() {
           <div className="project-grid" style={{ gridTemplateColumns: "repeat(2, minmax(0, 1fr))" }}>
             <div className="project-image-wrap card">
               <SmartImage
-                src="https://i.imgur.com/BAyoiUj.jpg"
+                src="/images/xbankz-shot-1.png"
                 alt="Screenshot one"
                 className="project-image"
                 fallbackTitle="Screenshot"
@@ -80,7 +80,7 @@ export default function ProjectDetail() {
             </div>
             <div className="project-image-wrap card">
               <SmartImage
-                src="https://i.imgur.com/1vBtW99.jpg"
+                src="/images/xbankz-shot-2.png"
                 alt="Screenshot two"
                 className="project-image"
                 fallbackTitle="Screenshot"

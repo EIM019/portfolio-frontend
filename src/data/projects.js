@@ -7,7 +7,7 @@ export const fallbackProjects = [
     solution: "Built a full-stack banking app with OTP authentication, transfer workflows, and automated fraud detection.",
     features: ["OTP login with account lockout", "Internal and interbank transfers with admin approval", "Fraud detection and audit trail logging"],
     tech_stack: ["React", "Flask", "PostgreSQL"],
-    image_url: "https://i.imgur.com/8jQtaD1.jpg",
+    image_url: "/images/xbankz.png",
     live_url: "https://project-xbanz-frontend.vercel.app",
     category: "Web Apps",
     featured: true
