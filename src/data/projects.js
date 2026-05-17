@@ -45,7 +45,7 @@ export const fallbackProjects = [
     ],
     tech_stack: ["ASP.NET Core MVC", "C#", "SQLite", "Entity Framework", "Identity"],
     image_url: "/images/urban-park.svg",
-    live_url: "",
+    live_url: "https://urban-park.onrender.com/",
     github_url: "https://github.com/EIM019/Urban-Park",
     category: "School Projects",
     featured: true
