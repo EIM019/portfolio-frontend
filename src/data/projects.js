@@ -49,6 +49,25 @@ export const fallbackProjects = [
     github_url: "https://github.com/EIM019/Urban-Park",
     category: "School Projects",
     featured: true
+  },
+  {
+    id: 4,
+    title: "Cybernova",
+    description: "A cyber security services platform with AI-themed threat intelligence, risk assessment intake, resources, and account flows.",
+    problem: "Security providers need a polished way to present services, collect assessment requests, share resources, and guide clients through cyber risk workflows.",
+    solution: "Built a futuristic cyber analytics web experience with service positioning, risk assessment forms, tracking, webinar/resource sections, customer account access, and admin entry points.",
+    features: [
+      "AI-styled cyber security landing page with threat monitoring signals",
+      "Risk assessment request form with country, industry, and service selection",
+      "Assessment tracking flow for submitted client requests",
+      "Webinars, whitepapers, customer portal, and admin navigation"
+    ],
+    tech_stack: ["React", "Vercel", "Responsive UI", "Forms", "Cybersecurity UX"],
+    image_url: "/images/cybernova.svg",
+    live_url: "https://cybernova-zeta.vercel.app",
+    github_url: "https://github.com/EIM019/cybernova",
+    category: "Web Apps",
+    featured: true
   }
 ];
 
