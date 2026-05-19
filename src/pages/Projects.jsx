@@ -1,20 +1,12 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ProjectCard from "../components/ProjectCard";
-import { fallbackProjects, mergeProjects } from "../data/projects";
+import { fallbackProjects } from "../data/projects";
 
-const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:5000";
 const tabs = ["All", "Web Apps", "School Projects", "Client Work"];
 
 export default function Projects() {
   const [active, setActive] = useState("All");
-  const [projects, setProjects] = useState(fallbackProjects);
-
-  useEffect(() => {
-    fetch(`${API_BASE}/api/projects`)
-      .then((response) => response.json())
-      .then((data) => setProjects(mergeProjects(data.projects || [])))
-      .catch(() => setProjects(fallbackProjects));
-  }, []);
+  const projects = fallbackProjects;
 
   const filtered = projects.filter((project) => active === "All" || project.category === active);
 

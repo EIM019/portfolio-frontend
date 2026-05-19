@@ -1,25 +1,11 @@
-import { useEffect, useState } from "react";
 import Hero from "../components/Hero";
 import ProjectCard from "../components/ProjectCard";
 import AppRequirementsChat from "../components/AppRequirementsChat";
 import ContactForm from "../components/ContactForm";
-import { fallbackProjects, mergeProjects } from "../data/projects";
-
-
-const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:5000";
+import { fallbackProjects } from "../data/projects";
 
 export default function Home() {
-  const [projects, setProjects] = useState(fallbackProjects);
-
-  useEffect(() => {
-    fetch(`${API_BASE}/api/projects`)
-      .then((r) => r.json())
-      .then((data) => {
-        setProjects(mergeProjects(data.projects || []));
-      })
-      .catch(() => setProjects(fallbackProjects));
-  }, []);
-
+  const projects = fallbackProjects;
   const featured = projects.filter((p) => p.featured);
 
   return (

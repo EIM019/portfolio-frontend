@@ -1,6 +1,6 @@
 export const fallbackProjects = [
   {
-    id: 1,
+    id: "xbankz",
     title: "xBankz",
     description: "A secure fintech banking platform with fraud detection and role-based access control.",
     problem: "Users needed a realistic digital banking experience with proper security and transfer controls.",
@@ -14,7 +14,7 @@ export const fallbackProjects = [
     featured: true
   },
   {
-    id: 2,
+    id: "task-manager",
     title: "Task Manager App",
     description: "A Flask task and performance management system for tracking appraisals, tasks, notifications, and team productivity.",
     problem: "Teams needed a clearer way to assign tasks, monitor completion, capture appraisal records, and review performance without relying on scattered manual tracking.",
@@ -32,7 +32,7 @@ export const fallbackProjects = [
     featured: true
   },
   {
-    id: 3,
+    id: "urban-park",
     title: "Urban Park",
     description: "An ASP.NET Core MVC parking management system for searching bays, booking spaces, and managing site layouts.",
     problem: "Operations teams needed a structured way to control parking availability across multiple sites, handle staff and visitor bookings, and keep layout status visible.",
@@ -51,7 +51,7 @@ export const fallbackProjects = [
     featured: true
   },
   {
-    id: 4,
+    id: "cybernova",
     title: "Cybernova",
     description: "A cyber security services platform with AI-themed threat intelligence, risk assessment intake, resources, and account flows.",
     problem: "Security providers need a polished way to present services, collect assessment requests, share resources, and guide clients through cyber risk workflows.",
@@ -71,17 +71,24 @@ export const fallbackProjects = [
   }
 ];
 
+function projectKey(project) {
+  return (project.title || String(project.id)).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+}
+
 export function mergeProjects(apiProjects = []) {
   const projectMap = new Map();
 
   fallbackProjects.forEach((project) => {
-    projectMap.set(String(project.id), project);
+    projectMap.set(projectKey(project), project);
   });
 
   apiProjects.forEach((project) => {
-    projectMap.set(String(project.id), {
-      ...projectMap.get(String(project.id)),
-      ...project
+    const key = projectKey(project);
+    const existingProject = projectMap.get(key);
+    projectMap.set(key, {
+      ...existingProject,
+      ...project,
+      id: existingProject?.id || project.id
     });
   });
 

@@ -11,12 +11,19 @@ export default function ProjectDetail() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    const fallbackProject = fallbackProjects.find((item) => String(item.id) === String(id));
+    if (fallbackProject) {
+      setProject(fallbackProject);
+      setLoading(false);
+      return;
+    }
+
     fetch(`${API_BASE}/api/projects/${id}`)
       .then((response) => response.json())
       .then((data) => {
-        setProject(data.project || fallbackProjects.find((item) => String(item.id) === String(id)));
+        setProject(data.project || null);
       })
-      .catch(() => setProject(fallbackProjects.find((item) => String(item.id) === String(id))))
+      .catch(() => setProject(null))
       .finally(() => setLoading(false));
   }, [id]);
 
