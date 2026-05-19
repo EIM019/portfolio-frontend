@@ -2,10 +2,12 @@ import { useEffect } from "react";
 import { Link, Route, Routes, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import AuthGate from "./components/AuthGate";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import ProjectDetail from "./pages/ProjectDetail";
 import About from "./pages/About";
+import AdminAccessLogs from "./pages/AdminAccessLogs";
 
 const titleMap = {
   "/": "Itumeleng Eric Mokgweetsi | Software & Data Engineer",
@@ -75,17 +77,20 @@ export default function App() {
   }, [location.pathname]);
 
   return (
-    <div className="app-shell">
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/projects/:id" element={<ProjectDetail />} />
-        <Route path="/about" element={<About />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-      <Footer />
-      <ScrollToTopButton />
-    </div>
+    <AuthGate>
+      <div className="app-shell">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/:id" element={<ProjectDetail />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/admin/access-logs" element={<AdminAccessLogs />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+        <Footer />
+        <ScrollToTopButton />
+      </div>
+    </AuthGate>
   );
 }
