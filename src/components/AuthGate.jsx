@@ -97,7 +97,11 @@ export default function AuthGate({ children }) {
       const data = await response.json();
       if (!response.ok) throw new Error(data.error || "Could not send access code.");
       setStep("otp");
-      setStatus(data.message || "One-time password sent. It expires in 20 minutes.");
+      setStatus(
+        data.email_sent
+          ? data.message || "One-time password sent. It expires in 20 minutes."
+          : data.debug_message || "The access code could not be emailed. Check backend SMTP settings."
+      );
     } catch (requestError) {
       setError(requestError.message);
     } finally {
